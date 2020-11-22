@@ -114,10 +114,17 @@ function draw() {
   image(polygon_img ,ball.position.x,ball.position.y,40,40);
 
   slingShot.display();
+  //keyPressed();
 }
 function mouseDragged(){
   Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
 }
 function mouseReleased(){
   slingShot.fly();
+}
+
+function keyPressed(){
+  if(keyCode === 32){
+    slingShot.attach(this.ball);
+  }
 }
